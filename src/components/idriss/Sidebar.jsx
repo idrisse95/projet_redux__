@@ -33,6 +33,34 @@ export const Sidebar = () => {
                 </p>
                 <p className='text-pink-500 font-bold text-lg'>1,49€</p></div>
             </div>
+              <div className='w-full h-[1px] bg-gray-300 my-3'></div>
+                <div className='flex'>
+                <div className='text-3xl text-gray-700 w-[5%] font-bold uppercase'>2</div>
+                <div className='w-[20%] border'>img1</div>
+                <div className='w-[75%]'><p className='font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+    
+                </p>
+                <p className='text-pink-500 font-bold text-lg'>1,49€</p></div>
+            </div>
+              <div className='w-full h-[1px] bg-gray-300 my-3'></div>
+                <div className='flex'>
+                <div className='text-3xl text-gray-700 w-[5%] font-bold uppercase'>3</div>
+                <div className='w-[20%] border'>img1</div>
+                <div className='w-[75%]'><p className='font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+    
+                </p>
+                <p className='text-pink-500 font-bold text-lg'>1,49€</p></div>
+            </div>
+              <div className='w-full h-[1px] bg-gray-300 my-3'></div>
+                <div className='flex'>
+                <div className='text-3xl text-gray-700 w-[5%] font-bold uppercase'>4</div>
+                <div className='w-[20%] border'>img1</div>
+                <div className='w-[75%]'><p className='font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+    
+                </p>
+                <p className='text-pink-500 font-bold text-lg'>1,49€</p></div>
+            </div>
+              <div className='w-full h-[1px] bg-gray-300 my-3'></div>
         </div>
     )
 }
