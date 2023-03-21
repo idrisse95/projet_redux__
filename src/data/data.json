@@ -1,158 +1,157 @@
 {
-    "sodas": [
-      {
-        "nom": "Coca-Cola",
-        "prix": 2.5,
-        "description": "Boisson gazeuse sucrée et rafraîchissante.",
-        "image_url": "https://example.com/cocacola.jpg"
-      },
-      {
-        "nom": "Pepsi",
-        "prix": 2.2,
-        "description": "Boisson gazeuse similaire au Coca-Cola.",
-        "image_url": "https://example.com/pepsi.jpg"
-      },
-      {
-        "nom": "Sprite",
-        "prix": 2.0,
-        "description": "Boisson gazeuse légère et citronnée.",
-        "image_url": "https://example.com/sprite.jpg"
-      },
-      {
-        "nom": "Fanta",
-        "prix": 2.1,
-        "description": "Boisson gazeuse fruitée et sucrée.",
-        "image_url": "https://example.com/fanta.jpg"
-      },
-      {
-        "nom": "Mountain Dew",
-        "prix": 2.3,
-        "description": "Boisson gazeuse avec une saveur unique.",
-        "image_url": "https://example.com/mountaindew.jpg"
-      },
-      {
-        "nom": "Dr Pepper",
-        "prix": 2.4,
-        "description": "Boisson gazeuse au goût complexe.",
-        "image_url": "https://example.com/drpepper.jpg"
-      }
-    ],
+  "sodas": [
+    {
+      "nom": "Coca-Cola",
+      "prix": 2.5,
+      "description": "Boisson gazeuse sucrée et rafraîchissante.",
+      "image_url": "../../public/img/soda/coca.webp"
+    },
+    {
+      "nom": "Pepsi",
+      "prix": 2.2,
+      "description": "Boisson gazeuse similaire au Coca-Cola.",
+      "image_url": "../../public/img/soda/pepsi.png"
+    },
+    {
+      "nom": "Sprite",
+      "prix": 2.0,
+      "description": "Boisson gazeuse légère et citronnée.",
+      "image_url": "../../public/img/soda/sprite.jpg"
+    },
+    {
+      "nom": "Fanta",
+      "prix": 2.1,
+      "description": "Boisson gazeuse fruitée et sucrée.",
+      "image_url": "../../public/img/soda/fanta.jpg"
+    },
+    {
+      "nom": "Mountain Dew",
+      "prix": 2.3,
+      "description": "Boisson gazeuse avec une saveur unique.",
+      "image_url": "../../public/img/soda/mountaindew.jpg"
+    },
+    {
+      "nom": "Dr Pepper",
+      "prix": 2.4,
+      "description": "Boisson gazeuse au goût complexe.",
+      "image_url": "../../public/img/soda/drpepper.jpg"
+    }
+  ],
 
-    "chips": [
-        {
-          "nom": "Lays Original",
-          "prix": 1.5,
-          "description": "Chips de pommes de terre classiques et croustillantes.",
-          "image_url": "https://example.com/laysoriginal.jpg"
-        },
-        {
-          "nom": "Pringles Sour Cream & Onion",
-          "prix": 2.0,
-          "description": "Chips en forme de disques aromatisées à la crème sure et aux oignons.",
-          "image_url": "https://example.com/pringlessourcream.jpg"
-        },
-        {
-          "nom": "Doritos Nacho Cheese",
-          "prix": 2.2,
-          "description": "Chips triangulaires avec une saveur de fromage nacho.",
-          "image_url": "https://example.com/doritosnacho.jpg"
-        },
-        {
-          "nom": "Cheetos Crunchy",
-          "prix": 1.8,
-          "description": "Snack à base de maïs soufflé au fromage croustillant.",
-          "image_url": "https://example.com/cheetoscrunchy.jpg"
-        },
-        {
-          "nom": "Ruffles Cheddar & Sour Cream",
-          "prix": 2.1,
-          "description": "Chips ondulées avec une saveur de cheddar et de crème sure.",
-          "image_url": "https://example.com/rufflescheddar.jpg"
-        },
-        {
-          "nom": "Tostitos Original",
-          "prix": 2.3,
-          "description": "Chips de maïs croustillantes pour tremper dans la salsa.",
-          "image_url": "https://example.com/tostitosoriginal.jpg"
-        }
-    ],
+  "chips": [
+    {
+      "nom": "Lays Original",
+      "prix": 1.5,
+      "description": "Chips de pommes de terre classiques et croustillantes.",
+      "image_url": "../../public/img/chips/lays.webp"
+    },
+    {
+      "nom": "Pringles Sour Cream & Onion",
+      "prix": 2.0,
+      "description": "Chips en forme de disques aromatisées à la crème sure et aux oignons.",
+      "image_url": "../../public/img/chips/pringles-sour.webp"
+    },
+    {
+      "nom": "Doritos Nacho Cheese",
+      "prix": 2.2,
+      "description": "Chips triangulaires avec une saveur de fromage nacho.",
+      "image_url": "../../public/img/chips/doritos.jpg"
+    },
+    {
+      "nom": "Cheetos Crunchy",
+      "prix": 1.8,
+      "description": "Snack à base de maïs soufflé au fromage croustillant.",
+      "image_url": "../../public/img/chips/cheetos-crunchy.jpg"
+    },
+    {
+      "nom": "Ruffles Cheddar & Sour Cream",
+      "prix": 2.1,
+      "description": "Chips ondulées avec une saveur de cheddar et de crème sure.",
+      "image_url": "../../public/img/chips/ruffles.jfif"
+    },
+    {
+      "nom": "Tostitos Original",
+      "prix": 2.3,
+      "description": "Chips de maïs croustillantes pour tremper dans la salsa.",
+      "image_url": "../../public/img/chips/tostitos.webp"
+    }
+],
 
-    "chocolats": [
-        {
-          "nom": "Lindt Excellence 70% cacao",
-          "prix": 3.5,
-          "description": "Chocolat noir riche et intense, avec une teneur en cacao de 70%.",
-          "image_url": "https://example.com/lindt70.jpg"
-        },
-        {
-          "nom": "Milka Lait Noisettes Entières",
-          "prix": 2.8,
-          "description": "Chocolat au lait onctueux avec des noisettes entières croquantes.",
-          "image_url": "https://example.com/milkanoisettes.jpg"
-        },
-        {
-          "nom": "Ferrero Rocher",
-          "prix": 4.0,
-          "description": "Chocolat au lait et noisettes avec un cœur crémeux et croquant.",
-          "image_url": "https://example.com/ferrerorocher.jpg"
-        },
-        {
-          "nom": "Ritter Sport Lait",
-          "prix": 2.5,
-          "description": "Chocolat au lait crémeux de qualité supérieure en format pratique carré.",
-          "image_url": "https://example.com/rittersportlait.jpg"
-        },
-        {
-          "nom": "Toblerone Chocolat Noir",
-          "prix": 3.2,
-          "description": "Chocolat noir suisse avec des morceaux d'amandes et de miel.",
-          "image_url": "https://example.com/tobleronenoir.jpg"
-        },
-        {
-          "nom": "Cadbury Dairy Milk Caramel",
-          "prix": 2.6,
-          "description": "Chocolat au lait crémeux avec un caramel fondant.",
-          "image_url": "https://example.com/cadburycaramel.jpg"
-        }
-    ],
-
-    "bonbons": [
-        {
-          "nom": "Haribo Goldbears",
-          "prix": 2.5,
-          "description": "Bonbons gélifiés en forme d'oursons, aux saveurs fruitées.",
-          "image_url": "https://example.com/haribogoldbears.jpg"
-        },
-        {
-          "nom": "Skittles Fruits",
-          "prix": 2.8,
-          "description": "Petits bonbons ronds aux couleurs vives et aux saveurs fruitées variées.",
-          "image_url": "https://example.com/skittlesfruits.jpg"
-        },
-        {
-          "nom": "M&M's Chocolat",
-          "prix": 3.0,
-          "description": "Petits bonbons ronds enrobés de chocolat au lait, colorés et croquants.",
-          "image_url": "https://example.com/mmschocolat.jpg"
-        },
-        {
-          "nom": "Nerds Rainbow",
-          "prix": 2.2,
-          "description": "Bonbons croquants en forme de petits cailloux multicolores, aux saveurs acidulées.",
-          "image_url": "https://example.com/nerdsrainbow.jpg"
-        },
-        {
-          "nom": "Trolli Brite Crawlers",
-          "prix": 2.7,
-          "description": "Bonbons gélifiés multicolores en forme de vers, aux saveurs fruitées.",
-          "image_url": "https://example.com/trollibrite.jpg"
-        },
-        {
-          "nom": "Werther's Original Caramel",
-          "prix": 3.2,
-          "description": "Bonbons au caramel fondant, doux et crémeux.",
-          "image_url": "https://example.com/wertherscaramel.jpg"
-        }
-    ]
+"chocolats": [
+  {
+    "nom": "Lindt Excellence 70% cacao",
+    "prix": 3.5,
+    "description": "Chocolat noir riche et intense, avec une teneur en cacao de 70%.",
+    "image_url": "../../public/img/chocolats/lindt.jpg"
+  },
+  {
+    "nom": "Milka Lait Noisettes Entières",
+    "prix": 2.8,
+    "description": "Chocolat au lait onctueux avec des noisettes entières croquantes.",
+    "image_url": "../../public/img/chocolats/milka.webp"
+  },
+  {
+    "nom": "Ferrero Rocher",
+    "prix": 4.0,
+    "description": "Chocolat au lait et noisettes avec un cœur crémeux et croquant.",
+    "image_url": "../../public/img/chocolats/ferrero.webp"
+  },
+  {
+    "nom": "Ritter Sport Lait",
+    "prix": 2.5,
+    "description": "Chocolat au lait crémeux de qualité supérieure en format pratique carré.",
+    "image_url": "../../public/img/chocolats/ritter.jpg"
+  },
+  {
+    "nom": "Toblerone Chocolat Noir",
+    "prix": 3.2,
+    "description": "Chocolat noir suisse avec des morceaux d'amandes et de miel.",
+    "image_url": "../../public/img/chocolats/toblerone.jpg"
+  },
+  {
+    "nom": "Cadbury Dairy Milk Caramel",
+    "prix": 2.6,
+    "description": "Chocolat au lait crémeux avec un caramel fondant.",
+    "image_url": "../../public/img/chocolats/cadbury.jpeg"
   }
-  
+],
+
+"bonbons": [
+  {
+    "nom": "Haribo Goldbears",
+    "prix": 2.5,
+    "description": "Bonbons gélifiés en forme d'oursons, aux saveurs fruitées.",
+    "image_url": "../../public/img/bonbons/haribo.webp"
+  },
+  {
+    "nom": "Skittles Fruits",
+    "prix": 2.8,
+    "description": "Petits bonbons ronds aux couleurs vives et aux saveurs fruitées variées.",
+    "image_url": "../../public/img/bonbons/skittles.jpg"
+  },
+  {
+    "nom": "M&M's Chocolat",
+    "prix": 3.0,
+    "description": "Petits bonbons ronds enrobés de chocolat au lait, colorés et croquants.",
+    "image_url": "../../public/img/bonbons/m&m.webp"
+  },
+  {
+    "nom": "Nerds Rainbow",
+    "prix": 2.2,
+    "description": "Bonbons croquants en forme de petits cailloux multicolores, aux saveurs acidulées.",
+    "image_url": "../../public/img/bonbons/nerds.jpg"
+  },
+  {
+    "nom": "Trolli Brite Crawlers",
+    "prix": 2.7,
+    "description": "Bonbons gélifiés multicolores en forme de vers, aux saveurs fruitées.",
+    "image_url": "../../public/img/bonbons/trolli.webp"
+  },
+  {
+    "nom": "Werther's Original Caramel",
+    "prix": 3.2,
+    "description": "Bonbons au caramel fondant, doux et crémeux.",
+    "image_url": "../../public/img/bonbons/werthel.jpg"
+  }
+]
+}
