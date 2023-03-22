@@ -4,5 +4,44 @@ div{
             text-shadow: 1px 1px 2px black;
         }
         border: 1.5px solid rgb(72, 72, 72);
+    }}
+header {
+    img{
+        width: 300px;
+    }
+}
+
+#bonbons, #chocolats, #chips, #soda{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .cardBonbon{
+        width: 30%;
+        margin: 30px 0;
+
+        h3{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .prix{
+            text-align: center;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .description{
+            text-align: center;
+        }
+        .imgCont{
+            height: 300px;
+            overflow: hidden;
+
+            img{
+                // height: 100%;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
     }
 }
