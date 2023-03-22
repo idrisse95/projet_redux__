@@ -16,13 +16,24 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className=" App">
 
       <div className='flex justify-center'>
-        <div className='w-[85%]'>
+        <div className='w-[75%] shadow-xl  bg-white'>
           <LayoutMain />
-          <div className=' gap-[5%] flex'>
-            <div className='w-[75%]'><Carousel /><Produits /><Panier /></div>
+          <div className=' gap-[2%] flex'>
+            <div className='w-[75%]'><Routes>
+          
+              <Route path='/' element={<Produits />} />
+              <Route path='bonbons' element={<Bonbons />} />
+              <Route path='selected/:nom' element={<SelectedItem />} />
+              <Route path='chocolats' element={<Chocolats />} />
+              <Route path='chips' element={<Chips />} />
+              <Route path='soda' element={<Soda />} />
+              <Route path='/panier' element={ <Panier/>}/>
+            </Routes>
+           
+            </div>
             <div className='w-[20%]'><Sidebar /></div>
           </div>
         </div>

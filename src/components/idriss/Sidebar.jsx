@@ -3,7 +3,7 @@ import img from '../../../public/img/bonbons/haribo.webp'
 
 export const Sidebar = () => {
     return (
-        <div>
+        <div className='pr-2'>
             <div className='bg-pink-500 text-white uppercase font-semibold px-2 py-2 rounded-lg mb-5'>nouveaux Produits</div>
             <div className='flex justify-center gap-10 my-2'>
                 <div className='w-[40%] border'><img className='border p-1 shadow-lg' src={img} alt="" /></div>

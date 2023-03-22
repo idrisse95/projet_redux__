@@ -1,31 +1,31 @@
 import React from 'react'
-import carou1 from '../../../public/img/bonbons/haribo.webp'
-import carou2 from '../../../public/img/bonbons/m&m.webp'
-import carou3 from '../../../public/img/bonbons/nerds.jpg'
+import carou1 from '../../../public/img/carousel/img1.jpg'
+import carou2 from '../../../public/img/carousel/img2.jpg'
+import carou3 from '../../../public/img/carousel/img3.jpg'
 
 
 export const Carousel = () => {
     return (
-        <div>
-            <div id="default-carousel" className="relative" data-carousel="static">
+        <div className='pl-3'>
+            <div id="default-carousel" className="relative " data-carousel="static">
 
                 <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
 
                     <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                        <span className="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                        <span className="absolute text-2xl font-semibold text-white -translate-x-1/2  -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
 
-                        <img src={carou1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="img1" /> lorem
+                        <img src={carou1} className="absolute block h-full w-full -translate-x-1/2  -translate-y-1/2 top-1/2 left-1/2" alt="img1" /> lorem
                     </div>
 
                     <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src={carou2} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                        <img src={carou2} className="absolute block h-full w-full -translate-x-1/2  -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                     </div>
 
                     <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src={carou3} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                        <img src={carou3} className="absolute block h-full w-full -translate-x-1/2  -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                     </div>
                 </div>
-                <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                <div className="absolute z-30 flex space-x-3 -translate-x-1/2  bottom-5 left-1/2">
                     <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
                     <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
                     <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
