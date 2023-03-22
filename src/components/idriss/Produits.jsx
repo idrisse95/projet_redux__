@@ -1,9 +1,17 @@
 import React from 'react'
 import data from '../../data/data.json'
+import { useDispatch, useSelector } from 'react-redux'
+import { add } from '../../slices/Slices'
 
 export const Produits = () => {
 
+  const dispatch = useDispatch()
 
+  const acheter = (donnee) => {
+
+    dispatch(add(donnee))
+
+  }
 
   return (
     <div>
@@ -16,7 +24,7 @@ export const Produits = () => {
             <p>{donnee.description}</p>
             <div className='flex justify-between items-baseline mt-8'>
               <p className='font-bold text-xl text-pink-500'>{donnee.prix} €</p
-            ><button className='bg-gray-300 text-gray-600 px-4 py-2 rounded-sm font-bold'>Acheter</button>
+              ><button onClick={() => acheter(donnee)} className='bg-gray-300 text-gray-600 px-4 py-2 rounded-sm font-bold'>Acheter</button>
             </div>
           </div>
         ))}
