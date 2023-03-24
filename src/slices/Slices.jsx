@@ -8,16 +8,22 @@ export const achat = createSlice(
         initialState:
         {
             panier: [],
+            zer:'scale-0'
         },
         reducers: {
             add: (state, action) => {
                 state.panier.push(action.payload)
-                console.log(state.panier);
-                console.log('bonjour');
+                if (state.panier.length > 0) {
+                    state.zer="scale-1"
+                }
+                else{
+                    state.zer="scale-0"
+                }
+               
             },
             delet: (state, action) => {
-                state.panier = state.panier.filter(item => item.id !== action.payload.id);
-                console.log('oui');
+                state.panier = state.panier.filter(item => item.id !== action.payload.id); 
+               
                 return state
             }
 

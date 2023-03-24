@@ -1,4 +1,5 @@
 
+import { useSelector } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 import { Carousel } from './components/idriss/Carousel'
@@ -14,9 +15,12 @@ import { Soda } from './components/victor/Soda'
 
 function App() {
 
+  const load = useSelector(state => state.achat.load)
+
 
   return (
     <div className=" App">
+      
 
       <div className='flex justify-center'>
         <div className='w-[75%] shadow-xl  bg-white'>

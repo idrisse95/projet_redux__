@@ -7,6 +7,7 @@ export const Chocolats = () => {
 
   return (
     <div id='chocolats'>
+       <p className='text-sm italic'>Home <i class="fa-solid fa-chevron-right italic  fa-xs"></i><i class="fa-solid fa-chevron-right italic fa-xs"></i> Chocolats</p>
         {chocolats.map((chocolat, index)=> 
         <div key={index} className='cardBonbon'>
             <div className='imgCont'>

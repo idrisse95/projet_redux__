@@ -12,13 +12,14 @@ export const Produits = () => {
 
     // dispatch(add(donnee))
     dispatch(add({id:Date.now(), nom:donnee.nom, image_url:donnee.image_url, prix:donnee.prix}))
-    console.log(donnee);
+  
   }
 
   return (
     <div className='pl-3'>
       <Carousel/>
       <div className='uppercase text-white p-2 bg-pink-500 my-5 rounded-lg'>notre sélection de produits américains</div>
+      <p className='text-gray-600 mb-5 text-sm italic'>Nos produits</p>
       <div className='grid grid-rows-2 grid-flow-col gap-4'>
         {data.chocolats.map((donnee) => (
           <div key={donnee.nom}>

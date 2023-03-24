@@ -8,10 +8,11 @@ export const SelectedItem = () => {
   const location = useLocation()
 
   const produit = location.state.bonbon
+  
   console.log(produit);
   return (
     <div className='text-sm'>
-
+      <p className='text-sm italic ml-16'>Home <i class="fa-solid fa-chevron-right italic  fa-2xs"></i><i class="fa-solid fa-chevron-right italic fa-2xs"></i> Bonbons <i class="fa-solid fa-chevron-right italic  fa-2xs"></i><i class="fa-solid fa-chevron-right italic fa-2xs"></i><span className='underline underline-offset-2'> {produit.nom}</span></p>
       <div className='mt-5 '>
         <div className='text-center text-3xl text-yellow-400 mb-8'>{produit.nom}</div>
 
@@ -29,7 +30,7 @@ export const SelectedItem = () => {
             <div className='flex justify-around'>
               <p className='text-pink-500 text-xl'>2,69 €</p>
               <div>
-                <button className='bg-gray-300/50 text-pink-500 px-2 py-1 font-bold'>Ajouter au panier</button>
+                <button  className='bg-gray-300/50 text-pink-500 px-2 py-1 font-bold'>Ajouter au panier</button>
               </div>
             </div>
           </div>

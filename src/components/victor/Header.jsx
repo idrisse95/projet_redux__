@@ -1,23 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 export const Header = () => {
 
   const nb = useSelector(state => state.achat.panier.length)
   const panier = useSelector(state => state.achat.panier)
+  const total = panier.reduce((somme, produit) => somme + produit.prix, 0).toFixed(2)
+  const zer = useSelector(state => state.achat.zer)
+ 
 
   return (
     <header className='flex pt-5 flex-col justify-between mb-5 '>
       <div>
 
-        <div className='text-end pr-5'><Link to='panier' className='bg-pink-500 py-1 px-2 relative rounded-lg'>Panier <span className="bg-white text-pink-500 rounded-full px-2 absolute -top-2 font-bold border-2 border-pink-700">{nb}</span></Link>
-          <div>
-            {panier.map((item) => (
-              <div >
-                <div><img src={item.image_url} className="w-[50px]" alt="" /> </div>
-                <div>{item.nom}</div>
-              </div>
-            ))}
+        <div id='panier' className='text-end pr-5 relative'><Link to='panier' className='bg-pink-500 py-1 px-2 relative rounded-lg'>Panier <span className={`bg-white text-pink-500 rounded-full px-2 absolute -top-2 font-bold border-2 border-pink-700 ${zer}`}>{nb}</span></Link>
+          <div id='pp' className='absolute right-5 top-7 bg-pink-500 px-4 py-3 text-black font-semibold rounded-md border'>
+            <div className=''>
+              {panier.map((item) => (
+                <div className='flex justify-between gap-2 pb-2 mt-2'>
+                  <div>{item.nom}</div>
+                  <div>{item.prix} €</div>
+                </div>
+              ))}
+            </div>
+            <div className='font-bold flex justify-between border-t-black border-dashed border-2 border-l-transparent border-b-transparent border-r-transparent mb-2 mt-3 pt-2'>
+              <p >Total de vos produits</p>
+              <p >{total}€</p>
+              
+            </div>
+            <div className='text-end'><button className='text-sm text-pink-500 bg-gray-300 py-1 rounded-lg border border-green-500 px-1'>Commander</button></div>
           </div>
         </div>
         <div className='text-center mt-[5%]'><input type="text" placeholder='Recherche' /></div>
