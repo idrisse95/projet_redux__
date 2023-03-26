@@ -8,7 +8,7 @@ export const SelectedItem = () => {
   const location = useLocation()
 
   const produit = location.state.bonbon
-  
+
   console.log(produit);
   return (
     <div className='text-sm'>
@@ -30,7 +30,7 @@ export const SelectedItem = () => {
             <div className='flex justify-around'>
               <p className='text-pink-500 text-xl'>2,69 €</p>
               <div>
-                <button  className='bg-gray-300/50 text-pink-500 px-2 py-1 font-bold'>Ajouter au panier</button>
+                <button className='bg-gray-300/50 text-pink-500 px-2 py-1 font-bold'>Ajouter au panier</button>
               </div>
             </div>
           </div>

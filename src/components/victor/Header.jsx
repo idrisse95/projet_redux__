@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { delet } from '../../slices/Slices'
 export const Header = () => {
 
   const nb = useSelector(state => state.achat.panier.length)
   const panier = useSelector(state => state.achat.panier)
   const total = panier.reduce((somme, produit) => somme + produit.prix, 0).toFixed(2)
   const zer = useSelector(state => state.achat.zer)
- 
+  const dispatch = useDispatch()
+
+  const supp = (item) => {
+    dispatch(delet(item))
+  }
+
 
   return (
     <header className='flex pt-5 flex-col justify-between mb-5 '>
@@ -19,19 +25,20 @@ export const Header = () => {
               {panier.map((item) => (
                 <div className='flex justify-between gap-2 pb-2 mt-2'>
                   <div>{item.nom}</div>
-                  <div>{item.prix} €</div>
+                  <div>{item.prix} €  <button className='text-red-800 uppercase px-2' onClick={() => { supp(item) }}>x</button></div>
+
                 </div>
               ))}
             </div>
             <div className='font-bold flex justify-between border-t-black border-dashed border-2 border-l-transparent border-b-transparent border-r-transparent mb-2 mt-3 pt-2'>
               <p >Total de vos produits</p>
               <p >{total}€</p>
-              
+
             </div>
-            <div className='text-end'><button className='text-sm text-pink-500 bg-gray-300 py-1 rounded-lg border border-green-500 px-1'>Commander</button></div>
+            <Link to="/paiement" className='text-end'><button className='text-sm text-pink-500 bg-gray-300 py-1 rounded-lg border border-green-500 px-1'>Commander</button></Link>
           </div>
         </div>
-        <div className='text-center mt-[5%]'><input type="text" placeholder='Recherche' /></div>
+        <div className='text-center mt-[5%]'><input type="text" className='oe' placeholder='Recherche' /></div>
 
       </div>
       <nav className='flex text-white justify-around  pt-3'>

@@ -9,10 +9,8 @@ export const Produits = () => {
   const dispatch = useDispatch()
 
   const acheter = (donnee) => {
-
     // dispatch(add(donnee))
     dispatch(add({id:Date.now(), nom:donnee.nom, image_url:donnee.image_url, prix:donnee.prix}))
-  
   }
 
   return (
