@@ -11,6 +11,7 @@ import { LayoutMain } from './components/LayoutMain'
 import { Bonbons } from './components/victor/Bonbons'
 import { Chips } from './components/victor/Chips'
 import { Chocolats } from './components/victor/Chocolats'
+import { Connection } from './components/victor/Connection'
 import { SelectedItem } from './components/victor/SelectedItem'
 import { Soda } from './components/victor/Soda'
 
@@ -32,6 +33,7 @@ function App() {
               <Route path='chocolats' element={<Chocolats />} />
               <Route path='chips' element={<Chips />} />
               <Route path='soda' element={<Soda />} />
+              <Route path='connection' element={<Connection />} />
               <Route path='/panier' element={<Panier />} />
               <Route path='/paiement' element={<Paiement />} />
             </Routes>

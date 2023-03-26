@@ -26,7 +26,7 @@ export const Bonbons = () => {
     }
   return (
     <div id='bonbons'>
-      <p className='text-sm italic'>Home <i class="fa-solid fa-chevron-right italic  fa-2xs"></i><i class="fa-solid fa-chevron-right italic fa-2xs"></i> Bonbons</p>
+      <p className='text-sm italic'>Home <i className="fa-solid fa-chevron-right italic  fa-2xs"></i><i className="fa-solid fa-chevron-right italic fa-2xs"></i> Bonbons</p>
        <div className='w-[60%] mb-10 mt-8'>
          <table className='w-full rounded-0 border border-pink-500 rounded-lg'>
           <thead className='bg-pink-500 uppercase pl-3 py-1 font-bold text-white '>Filtrer par marque</thead>

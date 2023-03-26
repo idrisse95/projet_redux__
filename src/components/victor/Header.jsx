@@ -10,6 +10,8 @@ export const Header = () => {
   const zer = useSelector(state => state.achat.zer)
   const dispatch = useDispatch()
 
+  const loginEmail = useSelector(state => state.connection.email);
+
   const supp = (item) => {
     dispatch(delet(item))
   }
@@ -17,9 +19,11 @@ export const Header = () => {
 
   return (
     <header className='flex pt-5 flex-col justify-between mb-5 '>
-      <div>
+      <div className='relative'>
 
-        <div id='panier' className='text-end pr-5 relative'><Link to='panier' className='bg-pink-500 py-1 px-2 relative rounded-lg'>Panier <span className={`bg-white text-pink-500 rounded-full px-2 absolute -top-2 font-bold border-2 border-pink-700 ${zer}`}>{nb}</span></Link>
+        <div className='absolute top-0 right-5'>{loginEmail ? loginEmail : <Link to='connection'>Connection | Guest</Link>}</div>
+        
+        <div id='panier' className='text-end pr-5 relative mt-8'><Link to='panier' className='bg-pink-500 py-1 px-2 relative rounded-lg'>Panier <span className={`bg-white text-pink-500 rounded-full px-2 absolute -top-2 font-bold border-2 border-pink-700 ${zer}`}>{nb}</span></Link>
           <div id='pp' className='absolute right-5 top-7 bg-pink-500 px-4 py-3 text-black font-semibold rounded-md border'>
             <div className=''>
               {panier.map((item) => (

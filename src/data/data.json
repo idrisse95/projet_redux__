@@ -42,7 +42,7 @@
       "ref":5524553,
       "prix": 2.3,
       "description": "Boisson gazeuse avec une saveur unique.",
-      "image_url": "../../public/img/soda/mountaindew.jpg"
+      "image_url": "../../public/img/soda/mountain-dew.jpg"
       ,"stock":5
     },
     {
@@ -51,7 +51,7 @@
       "ref":5524553,
       "prix": 2.4,
       "description": "Boisson gazeuse au goût complexe.",
-      "image_url": "../../public/img/soda/drpepper.jpg","stock":5
+      "image_url": "../../public/img/soda/dr-pepper.jpg","stock":5
     }
   ],
 
