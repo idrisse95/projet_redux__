@@ -9,7 +9,7 @@ export const Panier = () => {
     const [quantity, setQuantity] = useState(1)
     const [prix, setPrix] = useState(prix => prix * quantity)
     const [stock, setstock] = useState('En Stock !')
-    const total = panier.reduce((somme, produit) => somme + produit.prix, 0).toFixed(2)
+    const total = panier.reduce((somme, produit) => somme + produit.prix*produit.quant, 0).toFixed(2)
     const dispatch = useDispatch()
 
     const supp = (donnee) => {
@@ -43,7 +43,7 @@ export const Panier = () => {
 
                     {panier.map((item) => (
                         <tbody key={item.nom}><td className='pl-5'><img src={item.image_url} alt="" /></td><td className='pl-3'><p>{item.nom}</p>
-                            <p className='font-bold text-green-600'>{stock}</p></td><td className='pl-3'>{item.ref}</td><td className='pl-3'>{item.prix}</td><td className='pl-3'>{quantity}</td><td className='pl-3'>{item.prix * quantity}</td><td className='text-center'><button className='text-pink-500 
+                            <p className='font-bold text-green-600'>{stock}</p></td><td className='pl-3'>{item.ref}</td><td className='pl-3'>{item.prix}</td><td className='pl-3'>{item.quant}</td><td className='pl-3'>{item.prix * item.quant}</td><td className='text-center'><button className='text-pink-500 
                      bg-gray-300 px-2 py-1 hover:text-white' onClick={() => { supp(item) }}>supprimer</button></td></tbody>
                     ))}
                     

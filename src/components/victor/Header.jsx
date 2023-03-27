@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { delet } from '../../slices/Slices'
 export const Header = () => {
 
-  const nb = useSelector(state => state.achat.panier.length)
+  // const nb = useSelector(state => state.achat.panier.length)
   const panier = useSelector(state => state.achat.panier)
-  const total = panier.reduce((somme, produit) => somme + produit.prix, 0).toFixed(2)
+  const nb = panier.reduce((somme, produit) => somme + produit.quant, 0)
+  const total = panier.reduce((somme, produit) => somme + produit.prix*produit.quant, 0).toFixed(2)
   const zer = useSelector(state => state.achat.zer)
   const dispatch = useDispatch()
 
@@ -29,7 +30,7 @@ export const Header = () => {
               {panier.map((item) => (
                 <div className='flex justify-between gap-2 pb-2 mt-2'>
                   <div>{item.nom}</div>
-                  <div>{item.prix} €  <button className='text-red-800 uppercase px-2' onClick={() => { supp(item) }}>x</button></div>
+                  <div>{item.prix * item.quant} €  QTE: {item.quant} <button className='text-red-800 uppercase px-2' onClick={() => { supp(item) }}>x</button></div>
 
                 </div>
               ))}

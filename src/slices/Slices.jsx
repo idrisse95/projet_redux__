@@ -12,7 +12,15 @@ export const achat = createSlice(
         },
         reducers: {
             add: (state, action) => {
-                state.panier.push(action.payload)
+                
+                // gerer les doublons
+                const index = state.panier.findIndex(obj => obj.nom === action.payload.nom);
+                if (index !== -1) {
+                    state.panier[index].quant += 1;
+                } else {
+                    state.panier.push({ ...action.payload, quant: 1 });
+                }
+
                 if (state.panier.length > 0) {
                     state.zer="scale-1"
                 }
