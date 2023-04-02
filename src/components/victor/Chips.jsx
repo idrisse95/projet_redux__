@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { add } from '../../slices/Slices'
 
 export const Chips = () => {
+    const panier = useSelector(state => state.achat.panier);
 
     const chips = data.chips;
     const navigate = useNavigate()
@@ -45,7 +46,17 @@ export const Chips = () => {
               <p className='text-lg font-semibold'>{chip.nom}</p>
               <p className='prix'>Prix: {chip.prix}€</p>
               <p className='description'>{chip.description}</p>
-              <div className='flex justify-between'><button onClick={() => {acheter(chip)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button>
+              
+              {panier.find((item)=>item.nom === chip.nom) ? 
+                chip.stock > panier.find((item)=>item.nom === chip.nom).quant ?
+                  <p className='text-green-500'>Stock: {chip.stock - panier.find((item)=>item.nom === chip.nom).quant}</p> : 
+                  chip.stock <= panier.find((item)=>item.nom === chip.nom).quant ?
+                    <p className='text-red-500'>Produit indisponnible</p> : 
+                    <p className='text-green-500'>Stock: {chip.stock}</p>
+              : <p className='text-green-500'>Stock: {chip.stock}</p>}
+
+              <div className='flex justify-between'>
+              {panier.find((item)=>item.nom === chip.nom) ? chip.stock <= panier.find((item)=>item.nom === chip.nom).quant ? <button className="bg-red-100 py-1 px-3 text-red-500 mt-5">Acheter</button> : <button onClick={() => {acheter(chip)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button> : <button onClick={() => {acheter(chip)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button>}
               <button className="bg-gray-300/50 py-1 px-3 text-green-500 mt-5"  onClick={()=>{bonbonPick(chip)}}>Details</button></div>
           </div>)}
         </div>

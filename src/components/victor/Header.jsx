@@ -12,6 +12,7 @@ export const Header = () => {
   const dispatch = useDispatch()
 
   const loginEmail = useSelector(state => state.connection.email);
+  const isConnect = useSelector(state => state.connection.acces);
 
   const supp = (item) => {
     dispatch(delet(item))
@@ -40,7 +41,8 @@ export const Header = () => {
               <p >{total}€</p>
 
             </div>
-            <Link to="/paiement" className='text-end'><button className='text-sm text-pink-500 bg-gray-300 py-1 rounded-lg border border-green-500 px-1'>Commander</button></Link>
+            {isConnect? <Link to="/paiement" className='text-end'><button className='text-sm text-pink-500 bg-gray-300 py-1 rounded-lg border border-green-500 px-1'>Commander</button></Link> : <Link to='connection'>Veuillez vous connecter pour passer la commande</Link>}
+
           </div>
         </div>
         <div className='text-center mt-[5%]'><input type="text" className='oe' placeholder='Recherche' /></div>

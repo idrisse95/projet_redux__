@@ -1,4 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import '../data/data.json'
+import fs from 'fs'
 
 
 
@@ -30,11 +32,19 @@ export const achat = createSlice(
                
             },
             delet: (state, action) => {
-                state.panier = state.panier.filter(item => item.id !== action.payload.id); 
+                const index = state.panier.findIndex(obj => obj.nom === action.payload.nom);
+                console.log(index);
+                if (state.panier[index].quant > 1) {
+                    state.panier[index].quant -= 1
+                    
+                } else {
+                    state.panier = state.panier.filter(item => item.id !== action.payload.id); 
+                }
+
+                
                
                 return state
             }
-
 
         }
     }

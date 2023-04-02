@@ -8,8 +8,10 @@ import { add } from '../../slices/Slices'
 
 export const Bonbons = () => {
 
+    const panier = useSelector(state => state.achat.panier);
+
     const bonbons = data.bonbons;
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const bonbonPick = (bonbon) => {
       window.scroll(0,0)
@@ -45,7 +47,17 @@ export const Bonbons = () => {
               <p className='text-lg font-semibold'>{bonbon.nom}</p>
               <p className='prix'>Prix: {bonbon.prix}€</p>
               <p className='description'>{bonbon.description}</p>
-              <div className='flex justify-between'><button onClick={() => {acheter(bonbon)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button>
+
+              {panier.find((item)=>item.nom === bonbon.nom) ? 
+                bonbon.stock > panier.find((item)=>item.nom === bonbon.nom).quant ?
+                  <p className='text-green-500'>Stock: {bonbon.stock - panier.find((item)=>item.nom === bonbon.nom).quant}</p> : 
+                  bonbon.stock <= panier.find((item)=>item.nom === bonbon.nom).quant ?
+                    <p className='text-red-500'>Produit indisponnible</p> : 
+                    <p className='text-green-500'>Stock: {bonbon.stock}</p>
+              : <p className='text-green-500'>Stock: {bonbon.stock}</p>}
+              
+              <div className='flex justify-between'>
+              {panier.find((item)=>item.nom === bonbon.nom) ? bonbon.stock <= panier.find((item)=>item.nom === bonbon.nom).quant ? <button className="bg-red-100 py-1 px-3 text-red-500 mt-5">Acheter</button> : <button onClick={() => {acheter(bonbon)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button> : <button onClick={() => {acheter(bonbon)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button>}
               <button className="bg-gray-300/50 py-1 px-3 text-green-500 mt-5"  onClick={()=>{bonbonPick(bonbon)}}>Details</button></div>
           </div>)}
         </div>

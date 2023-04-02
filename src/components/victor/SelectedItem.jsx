@@ -7,6 +7,7 @@ import { add } from '../../slices/Slices'
 
 
 export const SelectedItem = () => {
+  const panier = useSelector(state => state.achat.panier);
 
   const location = useLocation()
 
@@ -33,7 +34,15 @@ export const SelectedItem = () => {
           <div className='w-[40%] flex flex-col justify-between'><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, sint omnis quo consequuntur laudantium accusamus, praesentium, voluptatum possimus aspernatur deserunt facere sunt doloribus! Tempore maxime eaque provident hic, earum quaerat?</p>
             <p className='my-2'>Origine du produit </p>
             <div className='h-[1px] bg-gray-400/50 w-full'></div>
-            <p className='font-bold'>Disponibilité : <span className='text-green-600 uppercase font-semibold'>en stock !</span></p>
+
+            {panier.find((item)=>item.nom === produit.nom) ? 
+              produit.stock > panier.find((item)=>item.nom === produit.nom).quant ?
+                <p className='text-green-500'>Stock: {produit.stock - panier.find((item)=>item.nom === produit.nom).quant}</p> : 
+                produit.stock <= panier.find((item)=>item.nom === produit.nom).quant ?
+                  <p className='text-red-500'>Produit indisponnible</p> : 
+                  <p className='text-green-500'>Stock: {produit.stock}</p>
+            : <p className='text-green-500'>Stock: {produit.stock}</p>}
+
             <div className='border text-center mt-2 mb-1 py-2 px-4 w-full border-gray-500 rounded-lg bg-gray-300/50 border-dashed'>
               <p>Commandez avant <span className='text-blue-500'>11h</span> nous expédions votre commande <span className='text-blue-500'>le jour-même</span></p>
             </div>
@@ -42,7 +51,9 @@ export const SelectedItem = () => {
             <div className='flex justify-around'>
               <p className='text-pink-500 text-xl'>2,69 €</p>
               <div>
-                <button onClick={() => {acheter(produit)}} className='bg-gray-300/50 text-pink-500 px-2 py-1 font-bold'>Ajouter au panier</button>
+                
+                {panier.find((item)=>item.nom === produit.nom) ? produit.stock <= panier.find((item)=>item.nom === produit.nom).quant ? <button className='bg-red-100 text-red-500 px-2 py-1 font-bold'>Ajouter au panier</button> : <button onClick={() => {acheter(produit)}} className='bg-gray-300/50 text-pink-500 px-2 py-1 font-bold'>Ajouter au panier</button> : <button onClick={() => {acheter(produit)}} className='bg-gray-300/50 text-pink-500 px-2 py-1 font-bold'>Ajouter au panier</button>}
+
               </div>
             </div>
           </div>

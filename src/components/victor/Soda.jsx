@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { add } from '../../slices/Slices'
 
 export const Soda = () => {
+    const panier = useSelector(state => state.achat.panier);
 
     const sodas = data.sodas;
     const navigate = useNavigate()
@@ -44,7 +45,17 @@ export const Soda = () => {
               <p className='text-lg font-semibold'>{soda.nom}</p>
               <p className='prix'>Prix: {soda.prix}€</p>
               <p className='description'>{soda.description}</p>
-              <div className='flex justify-between'><button onClick={() => {acheter(soda)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button>
+              
+              {panier.find((item)=>item.nom === soda.nom) ? 
+                soda.stock > panier.find((item)=>item.nom === soda.nom).quant ?
+                  <p className='text-green-500'>Stock: {soda.stock - panier.find((item)=>item.nom === soda.nom).quant}</p> : 
+                  soda.stock <= panier.find((item)=>item.nom === soda.nom).quant ?
+                    <p className='text-red-500'>Produit indisponnible</p> : 
+                    <p className='text-green-500'>Stock: {soda.stock}</p>
+              : <p className='text-green-500'>Stock: {soda.stock}</p>}
+
+              <div className='flex justify-between'>
+              {panier.find((item)=>item.nom === soda.nom) ? soda.stock <= panier.find((item)=>item.nom === soda.nom).quant ? <button className="bg-red-100 py-1 px-3 text-red-500 mt-5">Acheter</button> : <button onClick={() => {acheter(soda)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button> : <button onClick={() => {acheter(soda)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button>}
               <button className="bg-gray-300/50 py-1 px-3 text-green-500 mt-5"  onClick={()=>{bonbonPick(soda)}}>Details</button></div>
           </div>)}
         </div>

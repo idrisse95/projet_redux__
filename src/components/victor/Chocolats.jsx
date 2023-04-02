@@ -6,6 +6,8 @@ import { add } from '../../slices/Slices'
 
 export const Chocolats = () => {
 
+    const panier = useSelector(state => state.achat.panier);
+
     const chocolats = data.chocolats;
     const navigate = useNavigate()
 
@@ -44,7 +46,17 @@ export const Chocolats = () => {
               <p className='text-lg font-semibold'>{chocolat.nom}</p>
               <p className='prix'>Prix: {chocolat.prix}€</p>
               <p className='description'>{chocolat.description}</p>
-              <div className='flex justify-between'><button onClick={() => {acheter(chocolat)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button>
+              
+              {panier.find((item)=>item.nom === chocolat.nom) ? 
+                chocolat.stock > panier.find((item)=>item.nom === chocolat.nom).quant ?
+                  <p className='text-green-500'>Stock: {chocolat.stock - panier.find((item)=>item.nom === chocolat.nom).quant}</p> : 
+                  chocolat.stock <= panier.find((item)=>item.nom === chocolat.nom).quant ?
+                    <p className='text-red-500'>Produit indisponnible</p> : 
+                    <p className='text-green-500'>Stock: {chocolat.stock}</p>
+              : <p className='text-green-500'>Stock: {chocolat.stock}</p>}
+
+              <div className='flex justify-between'>
+              {panier.find((item)=>item.nom === chocolat.nom) ? chocolat.stock <= panier.find((item)=>item.nom === chocolat.nom).quant ? <button className="bg-red-100 py-1 px-3 text-red-500 mt-5">Acheter</button> : <button onClick={() => {acheter(chocolat)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button> : <button onClick={() => {acheter(chocolat)}} className="bg-gray-300/50 py-1 px-3 text-pink-500 mt-5">Acheter</button>}
               <button className="bg-gray-300/50 py-1 px-3 text-green-500 mt-5"  onClick={()=>{bonbonPick(chocolat)}}>Details</button></div>
           </div>)}
         </div>

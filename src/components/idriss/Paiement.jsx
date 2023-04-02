@@ -67,7 +67,8 @@ export const Paiement = () => {
               <label>
                 <input type="checkbox" checked="checked" name="sameadr" /> Shipping address same as billing
               </label>
-              <input type="submit" value="Continue to checkout" className="btn" />
+              {/* <input type="submit" value="Continue to checkout" className="btn" /> */}
+              <button className="btn" >Continue to checkout</button>
             </form>
           </div>
         </div>
